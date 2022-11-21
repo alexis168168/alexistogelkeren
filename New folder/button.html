@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn" type="button">CLICK ME</button>
+    <div class="open" id="open">OPEN BERHASIL</div>
+    <script>
+        const water = document.getElementById ("myBtn");
+
+        myBtn.addEventListener("click", function(e){
+            console.log("The Button Clicked!")
+        });
+    </script>
+    <!-- language: lang-html -->
+<style>
+    .details { background: grey; display: none; }
+.show { display: block; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<button data-id="1">Group A</button>
+<button data-id="2">Group B</button>
+<button data-id="3">group C</button>
+<button data-id="4">group D</button>
+<button data-id="5">Group E</button>
+<button data-id="6">Group F</button>
+<button data-id="7">Group G</button>
+<button data-id="8">Group H</button>
+
+<div class="details" data-id="1">
+  <h1>Details Person 1</h1>
+</div>
+
+<div class="details" data-id="2">
+  <h1>Details Person 2</h1>
+</div>
+
+<div class="details" data-id="3">
+  <h1>Details Person 3</h1>
+</div>
+<div class="details" data-id="4">
+    <h1>Details Person 4</h1>
+  </div>
+  <div class="details" data-id="5">
+    <h1>Details Person 5</h1>
+  </div>
+  <div class="details" data-id="6">
+    <h1>Details Person 6</h1>
+  </div>
+  <div class="details" data-id="7">
+    <h1>Details Person 7</h1>
+  </div><div class="details" data-id="8">
+    <h1>Details Person 8</h1>
+  </div>
+
+<script>// Use event delegation to listen to events from the buttons
+    $(document).on('click', 'button', handleClick)
+    
+    function handleClick() {
+    
+      // Grab the id from the button
+      const id = $(this).data('id');
+    
+      // Remove all the `show` classes from the details elements
+      $('.details').removeClass('show');
+    
+      // And then add that class back on to the details element
+      // that corresponds to the id
+      $(`.details[data-id=${id}]`).addClass('show');
+    }</script>
+</body>
+</html>
